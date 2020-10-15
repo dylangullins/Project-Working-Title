@@ -106,6 +106,8 @@ void PhysicsPlayground::InitScene(float windowWidth, float windowHeight)
 
 		//Sets up components	
 		std::string filename = "boxSprite.jpg";
+		ECS::GetComponent<Sprite>(entity).LoadSprite(filename, 20, 20);
+		ECS::GetComponent<Sprite>(entity).SetTransparnency(1.f);
 		ECS::GetComponent<Transform>(entity).SetPosition(vec3(-30.f, -20.f, 2.f));
 
 		auto& tempSpr = ECS::GetComponent<Sprite>(entity);
@@ -138,7 +140,8 @@ void PhysicsPlayground::InitScene(float windowWidth, float windowHeight)
 		std::string fileName = "boxSprite.jpg";
 		ECS::GetComponent<Sprite>(entity).LoadSprite(fileName, 20, 20);
 		ECS::GetComponent<Transform>(entity).SetPosition(vec3(30.f, -20.f, 2.f));
-
+		ECS::GetComponent<Sprite>(entity).SerTransparnency(1.f);
+		
 		auto& tempSpr = ECS::GetComponent<Sprite>(entity);
 		auto& tempPhsBody = ECS::GetComponent<PhysicsBody>(entity);
 
