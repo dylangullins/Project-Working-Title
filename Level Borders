@@ -1,0 +1,40 @@
+//Setup Level Borders 
+	{
+		auto entity = ECS::CreateEntity();
+
+		//Add components 
+		ECS::AttachComponent<Sprite>(entity);
+		ECS::AttachComponent<Transform>(entity);
+
+		//Sets the bottom border
+		std::string fileName = "Border.png";
+		ECS::GetComponent<Sprite>(entity).LoadSprite(fileName, 150, 1);
+		ECS::GetComponent<Sprite>(entity).SetTransparency(0.f);
+		ECS::GetComponent<Transform>(entity).SetPosition(vec3(-10.f, -20.f, 0.f));
+
+	}
+	{
+		//Sets the left border
+		auto entity = ECS::CreateEntity();
+
+		ECS::AttachComponent<Sprite>(entity);
+		ECS::AttachComponent<Transform>(entity);
+
+		std::string fileName = "Border.png";
+		ECS::GetComponent<Sprite>(entity).LoadSprite(fileName, 1, 150); 
+		ECS::GetComponent<Sprite>(entity).SetTransparency(0.f);
+		ECS::GetComponent<Transform>(entity).SetPosition(vec3(-10.f, -20.f, 0.f));
+	}
+	{
+		//Sets the right border
+		auto entity = ECS::CreateEntity();
+
+		ECS::AttachComponent<Sprite>(entity);
+		ECS::AttachComponent<Transform>(entity);
+
+		std::string fileName = "Border.png";
+		ECS::GetComponent<Sprite>(entity).LoadSprite(fileName, 1, 150);
+		ECS::GetComponent<Sprite>(entity).SetTransparency(0.f);
+		ECS::GetComponent<Transform>(entity).SetPosition(vec3(110.f, -20.f, 0.f));
+
+	}
